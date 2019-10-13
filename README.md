@@ -3,8 +3,13 @@ Bot showing the schedule for only one group of the SPbPU. It takes data from htt
 
 Some examples:
 1) Start message
+
 ![Start message](https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/start_message.png)
+
 2) Message about lessons in day
+
 ![Lessons](https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/lessons.png)
+
 3) Message about how many lessons there are in day
+
 ![Count lessons](https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/count_lessons.png)
