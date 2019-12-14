@@ -60,16 +60,18 @@ pip install html
 
 * Стартовое сообщение
 
-![Start message](https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/start_message.png)
+<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/start_message.png" align="centre"
+     title="Start message">
 
 * Сообщение о предментах за текущий день
 
-![Lessons](https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/lessons.png)
+<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/lessons.png" align="centre"
+     title="Lessons">
 
 * Сообщение о количестве предметах за день
 
-![Count lessons](https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/count_lessons.png)
-
+<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/count_lessons.png" align="right"
+     title="Count lessons">
 
 ## Тестирование
 
@@ -78,6 +80,5 @@ pip install html
 ## Авторы
 
 [Волохов Леонид](https://github.com/LeonidVolohov)
+
 [Крамаров Евгений](https://github.com/kramarov-evg)
-
-
