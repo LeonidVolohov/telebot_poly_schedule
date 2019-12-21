@@ -13,7 +13,7 @@ def get_groups(api_link: str) -> dict:
         id = faculty['id']
         while not got:
             try:
-                groups = json.loads(requests.get(link+'/'+str(id)+'/groups', timeout=2).text)
+                groups = json.loads(requests.get(link + '/' + str(id) + '/groups', timeout=2).text)
                 got = True
             # If API server doesn't respond or responds with corrupted json
             except:

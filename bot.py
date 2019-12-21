@@ -1,15 +1,19 @@
 # TODO: separate api_link, token from code for easier unified access
-
 import telebot
 from telebot import apihelper, types
 import datetime
 import sys
-sys.path.insert(1, '/*MyPath*/code/utils/')
-sys.path.insert(2, '/*MyPath*/code/web_tools/')
+import os
 
-import group_funcs
-import schedule_funcs
+# Get path to current directory
+pwd = os.path.split(os.path.abspath(__file__))[0]
+
+sys.path.append(os.path.join(pwd, 'utils'))
+sys.path.append(os.path.join(pwd, 'web_tools'))
+
 import initializer
+import schedule_funcs
+import group_funcs
 
 api_link = 'http://ruz.spbstu.ru/api/v1/ruz'
 
@@ -37,7 +41,8 @@ def start_communication(message):
 def get_group(message):
     try:
         group = group_funcs.parse_group_from_user(message.text)
-        group_funcs.remember_relation(user_id=message.from_user.id, group=group)
+        group_funcs.remember_relation(
+            user_id=message.from_user.id, group=group)
         update_message = 'Отлично, твоя группа обновлена'
         keyboard = KEYBOARD
     except ValueError:
@@ -45,8 +50,12 @@ def get_group(message):
                                     'Попробуй ещё раз с помощью "/set_group <номер группы>".',
                                     'Например "/set_group 3530904/70101".'))
         keyboard = types.ReplyKeyboardRemove()
-    bot.send_message(chat_id=message.chat.id,
-                     text=update_message, reply_markup=keyboard)
+    except SyntaxError:
+        response_message = '\n'.join(('Ты неправильно написал номер группы.',
+                                      'Укажи её, пожалуйста, через "/set_group <номер группы>"'))
+        keyboard = types.ReplyKeyboardRemove()
+ bot.send_message(chat_id=message.chat.id,
+                  text=update_message, reply_markup=keyboard)
     log(message)
 
 
@@ -65,9 +74,6 @@ def process_request(message):
     # May be thrown if user is unknown yet
     except KeyError:
         response_message = '\n'.join(('Ты указал неверный номер группы. Я не могу её распознать',
-                                        'Укажи её, пожалуйста, через "/set_group <номер группы>"'))
-    except SyntaxError:
-        response_message = '\n'.join(('Ты неправильно написал номер группы.', 
                                         'Укажи её, пожалуйста, через "/set_group <номер группы>"'))
     bot.send_message(message.chat.id, response_message)
     log(message)

@@ -1,5 +1,9 @@
 import sys
-sys.path.insert(1, '/*MyPath*/code/utils/')
+import os
+
+# Path to Project Directory
+ppd = os.path.split(os.path.split(os.path.abspath(__file__))[0])[0]
+sys.path.insert(os.path.join(ppd, 'utils'))
 
 import schedule_funcs
 
