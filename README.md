@@ -65,7 +65,7 @@ pip install html
 
 * Сообщение о предментах за текущий день
 
-<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/lessons.png" align="center"
+<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/lessons_in_a_day.png" align="center"
      title="Lessons">
 
 * Сообщение о количестве предметах за день
