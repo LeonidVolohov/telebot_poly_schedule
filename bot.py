@@ -2,10 +2,14 @@
 
 import telebot
 from telebot import apihelper, types
-
 import datetime
-from web_tools import initializer
-from utils import group_funcs, schedule_funcs
+import sys
+sys.path.insert(1, '/*MyPath*/code/utils/')
+sys.path.insert(2, '/*MyPath*/code/web_tools/')
+
+import group_funcs
+import schedule_funcs
+import initializer
 
 api_link = 'http://ruz.spbstu.ru/api/v1/ruz'
 
@@ -60,8 +64,11 @@ def process_request(message):
             response_message = '\n'.join('Ты просишь от меня слишком многого, я этого ещё не умею!')
     # May be thrown if user is unknown yet
     except KeyError:
-        response_message = '\n'.join(('Извини, я ещё не знаю твою группу.',
-                                      'Укажи её, пожалуйста, через "/set_group <номер группы>"'))
+        response_message = '\n'.join(('Ты указал неверный номер группы. Я не могу её распознать',
+                                        'Укажи её, пожалуйста, через "/set_group <номер группы>"'))
+    except SyntaxError:
+        response_message = '\n'.join(('Ты неправильно написал номер группы.', 
+                                        'Укажи её, пожалуйста, через "/set_group <номер группы>"'))
     bot.send_message(message.chat.id, response_message)
     log(message)
 
