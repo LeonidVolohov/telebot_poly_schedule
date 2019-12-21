@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.insert(1, '/home/leonid/Documents/github/bot_evgenij/telebot_poly_schedule/code/web_tools/')
+sys.path.insert(1, '/*MyPath*/code/web_tools/')
 
 import initializer
 

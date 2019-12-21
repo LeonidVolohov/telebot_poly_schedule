@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.insert(1, '/home/leonid/Documents/github/bot_evgenij/telebot_poly_schedule/code/utils/')
+sys.path.insert(1, '/*MyPath*/code/utils/')
 
 import group_funcs
 
