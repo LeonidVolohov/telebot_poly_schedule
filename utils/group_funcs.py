@@ -12,7 +12,7 @@ def parse_group_from_user(message_text: str) -> int:
     If successful - returns corresponding tuple (faculty_id, group_id).
     Otherwise raises ValueError'''
     message_as_list = message_text.split()
-    if len(message_as_list) < 2:
+    if len(message_as_list) != 2:
         raise ValueError
 
     # group_number is a string
