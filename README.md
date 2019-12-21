@@ -63,7 +63,17 @@ pip install html
 <img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/start_message.png" align="center"
      title="Start message">
 
-* Сообщение о предментах за текущий день
+* Сообщение с выбором группы
+
+<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/set_group_message.png" align="center"
+     title="Start message">
+
+* Кастомная клавиатуры с множественным выбором
+
+<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/keyboard_choice.png" align="center"
+     title="Start message">
+
+* Сообщение о предметах за текущий день
 
 <img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/lessons_in_a_day.png" align="center"
      title="Lessons">
