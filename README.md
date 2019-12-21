@@ -75,7 +75,25 @@ pip install html
 
 ## Тестирование
 
-*TODO: Добавить тестирование*
+Тестирование производилось с использованием модуля unittest.
+
+### Результаты тестирования
+
+* Результаты тестирования файла *group_funcs.py*
+
+<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/test_group_funcs.png" align="center"
+     title="Results of 'group_funcs.py' file">
+
+* Результаты тестирования файла *initializer.py*
+
+<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/test_initializer.png" align="center"
+     title="Results of 'initializer.py' file">
+
+* Результаты тестирования файла *schedule_funcs.py*
+
+<img src="https://github.com/LeonidVolohov/telebot_poly_schedule/blob/master/screenshot/test_schedule_funcs.png" align="center"
+     title="Results of 'schedule_funcs.py' file">
+
 
 ## Авторы
 
