@@ -1,4 +1,7 @@
-from utils import schedule_funcs
+import sys
+sys.path.insert(1, '/*MyPath*/code/utils/')
+
+import schedule_funcs
 
 USER_GROUPS = {}  # stores group number for each user
 GROUP_IDS = {}  # group_number: (faculty_id, group_id). Add Possible groups here

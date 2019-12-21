@@ -1,7 +1,9 @@
 import datetime
 import json
 import requests
-from utils import group_funcs
+sys.path.insert(1, '/*MyPath*/code/utils/')
+
+import group_funcs
 
 PERSONAL_SCHEDULES = {}
 
