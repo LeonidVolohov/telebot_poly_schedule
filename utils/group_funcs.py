@@ -13,7 +13,7 @@ def parse_group_from_user(message_text: str) -> int:
     Otherwise raises ValueError'''
     message_as_list = message_text.split()
     if len(message_as_list) != 2:
-        raise ValueError
+        raise SyntaxError
 
     # group_number is a string
     group_number = message_as_list[1]
