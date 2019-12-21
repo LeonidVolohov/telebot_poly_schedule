@@ -6,7 +6,7 @@ import os
 
 # Path to Project Directory
 ppd = os.path.split(os.path.split(os.path.abspath(__file__))[0])[0]
-sys.path.insert(os.path.join(ppd, 'utils'))
+sys.path.append(os.path.join(ppd, 'utils'))
 
 import group_funcs
 
@@ -86,6 +86,7 @@ class Schedule:
                 one_day_lessons.append(Lesson(lesson))
             self.week[date] = one_day_lessons
 
+
     def day_to_str(self, date: str) -> str:
         '''Returns string representation of a single day'''
         out_string = ''
@@ -104,12 +105,20 @@ class Schedule:
     def for_today(self) -> str:
         '''Returns a string with today's schedule'''
         today = self.get_today()
-        return self.day_to_str(date=today)
+        # If there no lessons for today get_today will return None, so need to return 0 in this case
+        try:
+            return self.day_to_str(date=today)
+        except KeyError:
+            return 'Сегодня никаких пар нет'
 
     def count_lessons_today(self) -> int:
         '''Returns amount of lessons for today'''
         today = self.get_today()
-        return len(self.week[today])
+        # If there no lessons for today get_today will return None, so need to return 0 in this case
+        try:
+            return len(self.week[today])
+        except KeyError:
+            return 0
 
     def for_current_week(self):
         '''Returns string represenation of a schedule for a week'''

@@ -17,7 +17,9 @@ import group_funcs
 
 api_link = 'http://ruz.spbstu.ru/api/v1/ruz'
 
-apihelper.proxy = {'https': 'https://167.172.140.184:3128'}
+# Enter free proxy here
+proxies = {'https': 'https://47.254.44.246:80'}
+apihelper.proxy = proxies
 bot = telebot.TeleBot('<TOKEN>')
 KEYBOARD = types.ReplyKeyboardMarkup(resize_keyboard=True)
 KEYBOARD.row('Сколько сегодня пар?')
@@ -25,6 +27,7 @@ KEYBOARD.row('Расписание на сегодня')
 KEYBOARD.row('Расписание на неделю')
 
 group_funcs.GROUP_IDS = initializer.get_groups(api_link)
+print(bot.get_me())
 print('bot is UP!')
 
 
@@ -51,11 +54,11 @@ def get_group(message):
                                     'Например "/set_group 3530904/70101".'))
         keyboard = types.ReplyKeyboardRemove()
     except SyntaxError:
-        response_message = '\n'.join(('Ты неправильно написал номер группы.',
+        update_message = '\n'.join(('Ты неправильно написал номер группы.',
                                       'Укажи её, пожалуйста, через "/set_group <номер группы>"'))
         keyboard = types.ReplyKeyboardRemove()
- bot.send_message(chat_id=message.chat.id,
-                  text=update_message, reply_markup=keyboard)
+    bot.send_message(chat_id=message.chat.id,
+                     text=update_message, reply_markup=keyboard)
     log(message)
 
 
@@ -87,4 +90,4 @@ def log(message):
                                                                   str(message.from_user.id), message.text))
 
 
-bot.polling(none_stop=True)
+bot.polling(none_stop=True, timeout=30)

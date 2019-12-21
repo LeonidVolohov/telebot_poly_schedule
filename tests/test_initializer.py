@@ -4,7 +4,7 @@ import os
 
 # Path to Project Directory
 ppd = os.path.split(os.path.split(os.path.abspath(__file__))[0])[0]
-sys.path.insert(os.path.join(ppd, 'web_tools'))
+sys.path.append(os.path.join(ppd, 'web_tools'))
 
 import initializer
 
